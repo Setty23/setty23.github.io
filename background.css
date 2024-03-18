@@ -1,0 +1,25 @@
+
+dy {
+    margin: 0;
+    padding: 0;
+    background-image: url('chemlogo.PNG'); /* Replace 'background.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif; /* Example font-family */
+}
+
+.container {
+    padding: 20px; /* Adjust padding as needed */
+}
+
+h1 {
+    color: green;
+    font-size: 18px;
+    margin: 0;
+}
+
+.subtext {
+    font-size: 14px;
+    color: #333; /* or any color you prefer */
+    margin: 0;
+}
