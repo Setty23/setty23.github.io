@@ -29,8 +29,8 @@ CREATE TABLE chemical_properties (
 <<<<<<< HEAD:chemical_property.sql
 LOAD DATA INFILE 'periodic.csv'
 =======
-LOAD DATA INFILE 'Book1.csv'
->>>>>>> 28c34b0b16789196dac36911489025c340c4dbb8:chemical_property.sgl
+LOAD DATA INFILE 'periodic.csv'
+>>>>>>> 28c34b0b16789196dac36911489025c340c4dbb8:chemical_property.sql
 INTO TABLE chemical_properties
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
