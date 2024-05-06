@@ -1,0 +1,27 @@
+LOAD DATA INFILE 'Book1.csv'
+CREATE TABLE chemical_properties (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    AtomicNumber INT,
+    Element VARCHAR(50),
+    Symbol VARCHAR(10),
+    AtomicMass DECIMAL(10, 4),
+    Phase VARCHAR(20),
+    Radioactive BOOLEAN,
+    Natural BOOLEAN,
+    Metal BOOLEAN,
+    Nonmetal BOOLEAN,
+    Metalloid BOOLEAN,
+    Type VARCHAR(20),
+    AtomicRadius DECIMAL(7, 2),
+    Electronegativity DECIMAL(7, 4),
+    FirstIonization DECIMAL(7, 2),
+    Density DECIMAL(10, 8),
+    MeltingPoint DECIMAL(7, 2),
+    BoilingPoint DECIMAL(7, 2),
+    NumberOfIsotopes INT,
+    Discoverer VARCHAR(100),
+    Year INT,
+    SpecificHeat DECIMAL(7, 4),
+    NumberofShells INT,
+    NumberofValence INT
+);
