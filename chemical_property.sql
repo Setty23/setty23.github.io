@@ -1,4 +1,4 @@
-LOAD DATA INFILE 'Book1.csv'
+LOAD DATA INFILE 'periodic.csv'
 CREATE TABLE chemical_properties (
     id INT AUTO_INCREMENT PRIMARY KEY,
     AtomicNumber INT,
@@ -27,7 +27,7 @@ CREATE TABLE chemical_properties (
 );
 
 <<<<<<< HEAD:chemical_property.sql
-LOAD DATA INFILE 'your_file.csv'
+LOAD DATA INFILE 'periodic.csv'
 =======
 LOAD DATA INFILE 'Book1.csv'
 >>>>>>> 28c34b0b16789196dac36911489025c340c4dbb8:chemical_property.sgl
