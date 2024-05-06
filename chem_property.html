@@ -37,11 +37,12 @@
 
     <!-- Search form -->
     <div class="search-container">
-        <form action="/search" method="GET">
-            <input type="text" class="search-input" placeholder="Search..." name="q">
-            <button type="submit" class="search-button">Search</button>
-        </form>
-    </div>
+        <form action="/search.php" method="GET">
+            <label for="symbol">Enter Element Symbol:</label>
+            <input type="text" id="symbol" class="search-input" placeholder="Search by symbol..." name="symbol">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+        </div>
 
 </body>
 </html>
