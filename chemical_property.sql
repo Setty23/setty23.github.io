@@ -26,7 +26,11 @@ CREATE TABLE chemical_properties (
     NumberofValence INT
 );
 
+<<<<<<< HEAD:chemical_property.sql
 LOAD DATA INFILE 'your_file.csv'
+=======
+LOAD DATA INFILE 'Book1.csv'
+>>>>>>> 28c34b0b16789196dac36911489025c340c4dbb8:chemical_property.sgl
 INTO TABLE chemical_properties
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
