@@ -1,7 +1,5 @@
 <?php
 
-// Assuming $search contains the user input from the form
-$search = $_GET['symbol'];
 
 // MySQL database configuration
 $servername = "328963-web-01";
