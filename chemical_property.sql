@@ -25,3 +25,9 @@ CREATE TABLE chemical_properties (
     NumberofShells INT,
     NumberofValence INT
 );
+
+LOAD DATA INFILE 'your_file.csv'
+INTO TABLE chemical_properties
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
