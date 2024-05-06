@@ -4,10 +4,10 @@
 $search = $_GET['symbol'];
 
 // MySQL database configuration
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "database";
+$servername = "328963-web-01";
+$username = "ubuntu";
+$password = "root";
+$dbname = "chemical_property";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
