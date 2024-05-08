@@ -4,6 +4,8 @@ body {
     background-image: url(6586755_3359732.jpg); /* Replace 'background.jpg' with the path to your image */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, sans-serif; /* Example font-family */
 }
 
