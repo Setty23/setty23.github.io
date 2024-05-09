@@ -9,6 +9,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Arial, sans-serif; /* Example font-family */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
 } 
 .main { 
     background: rgba(4, 0, 255, 0.1); 
