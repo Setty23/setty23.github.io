@@ -37,6 +37,15 @@ document
 document 
     .getElementById("timeConvertBtn") 
     .addEventListener("click", timeFn); 
+document
+    .getElementById("velocityConvertBtn")
+    .addEventListener("click", velocityFn);
+document
+    .getElementById("volumeConvertBtn")
+    .addEventListener("click", volumeFn);
+document
+    .getElementById("forceConvertBtn")
+    .addEventListener("click", forceFn);
 function tempFn() { 
     let valInput = parseFloat( 
         document.getElementById( 
@@ -204,4 +213,54 @@ function timeFn() {
     ).textContent = `Result: ${result.toFixed( 
         2 
     )} ${toUnit}`; 
+}
+function velocityFn() {
+    let valInput = parseFloat(document.getElementById("velocityInput").value);
+    let fromUnit = document.getElementById("fromVelocityUnit").value;
+    let toUnit = document.getElementById("toVelocityUnit").value;
+    // Conversion factors for velocity units
+    let conversionFactors = {
+        meterPerSecond: 1,
+        kilometerPerHour: 3.6,
+        milePerHour: 2.23694,
+        knot: 1.94384,
+    };
+    let result = valInput * (conversionFactors[toUnit] / conversionFactors[fromUnit]);
+    document.getElementById("velocityResult").textContent = `Result: ${result.toFixed(2)} ${toUnit}`;
+}
+
+function volumeFn() {
+    let valInput = parseFloat(document.getElementById("volumeInput").value);
+    let fromUnit = document.getElementById("fromVolumeUnit").value;
+    let toUnit = document.getElementById("toVolumeUnit").value;
+    // Conversion factors for volume units
+    let conversionFactors = {
+        cubicMeter: 1,
+        liter: 1000,
+        cubicCentimeter: 1000000,
+        cubicFoot: 35.3147,
+        cubicInch: 61023.7,
+        gallon: 264.172,
+        quart: 1056.69,
+        pint: 2113.38,
+        cup: 4226.75,
+        milliliter: 1000000,
+    };
+    let result = valInput * (conversionFactors[toUnit] / conversionFactors[fromUnit]);
+    document.getElementById("volumeResult").textContent = `Result: ${result.toFixed(2)} ${toUnit}`;
+}
+
+function forceFn() {
+    let valInput = parseFloat(document.getElementById("forceInput").value);
+    let fromUnit = document.getElementById("fromForceUnit").value;
+    let toUnit = document.getElementById("toForceUnit").value;
+    // Conversion factors for force units
+    let conversionFactors = {
+        newton: 1,
+        kilonewton: 0.001,
+        dyne: 100000,
+        poundForce: 0.224809,
+    };
+    let result = valInput * (conversionFactors[toUnit] / conversionFactors[fromUnit]);
+    document.getElementById("forceResult").textContent = `Result: ${result.toFixed(2)} ${toUnit}`;
 }
