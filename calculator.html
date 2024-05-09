@@ -3,46 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page</title>
-     <style>
-        /* Add any custom CSS styles for your search bar here */
-        .search-container {
-            margin-top: 20px;
+    <title>Chemprop</title>
+    <script src="dropdown.js"></script>
+    <link rel="stylesheet" href="background.css">
+    <style>
+        h1 {
+            color: green;
+            font-size: 40px;
+            margin: 0; /* Remove any margin */
+            padding: 0; /* Remove any padding */
         }
-        .search-input {
-            padding: 10px;
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+        .subtext {
+            font-size: 14px;
+            color: white; /* or any color you prefer */
+            margin: 0; /* Remove any margin */
+            padding: 0; /* Remove any padding */
         }
-        .search-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .search-button:hover {
+    
+.special,
+.special1,
+.specials {
+    display: block;
+    padding: 20px 30px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: none;
+    position: relative;
+    margin-top: 20px;
+}
+        .button:hover {
             background-color: #45a049;
         }
+        .buttonr:hover {
+            background-color: #45a049;
+        }
+        .buttonl:hover {
+            background-color: #45a049;
+             }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to the Other Page</h1>
-    <p>This is the content of the other page.</p>
+    <h1>Chemprop</h1>
+    <p class="subtext">Unlock Chemical Insights Calculate with Precision</p>
 
-    <!-- Search form -->
-    <div class="search-container">
-        <form action="/search.php" method="GET">
-            <label for="symbol">Enter Element Symbol:</label>
-            <input type="text" id="symbol" class="search-input" placeholder="Search by symbol..." name="symbol">
-        <button type="submit" class="search-button">Search</button>
-    </form>
-        </div>
+
+
+   <a href="mass_balance.html" class="button special">Mass Balance</a> 
+    <a href="energy_balance.html" class="button specials"> Energy Balance</a>
+    <a href="calculator.html" class="button special1"> Calculator</a>
+   
+   
+
+ 
 
 </body>
 </html>
