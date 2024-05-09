@@ -37,6 +37,9 @@
             <option value="time"> 
                   Time 
               </option> 
+           <option value="velocity">Velocity</option> 
+            <option value="volume">Volume</option> 
+            <option value="force">Force</option> 
         </select> 
         <div class="container"> 
             <div class="conversion" 
@@ -238,7 +241,64 @@
                   </p> 
                 </div> 
             </div> 
-        </div> 
+         <div class="conversion" id="velocity"> 
+    <h2 class="category-title">Velocity</h2> 
+    <input type="number" id="velocityInput" class="input" placeholder="Enter value"> 
+    <select id="fromVelocityUnit" class="unit-select"> 
+        <option value="m/s">Meter per Second (m/s)</option> 
+        <option value="km/h">Kilometer per Hour (km/h)</option> 
+        <!-- Add more velocity units here if needed -->
+    </select> 
+    <span class="arrow">➡</span> 
+    <select id="toVelocityUnit" class="unit-select"> 
+        <option value="m/s">Meter per Second (m/s)</option> 
+        <option value="km/h">Kilometer per Hour (km/h)</option> 
+        <!-- Add more velocity units here if needed -->
+    </select> 
+    <button id="velocityConvertBtn" class="convert-button">Convert</button> 
+    <div class="result"> 
+        <p id="velocityResult">Result will be displayed here</p> 
+    </div> 
+</div> 
+   <div class="conversion" id="volume"> 
+    <h2 class="category-title">Volume</h2> 
+    <input type="number" id="volumeInput" class="input" placeholder="Enter value"> 
+    <select id="fromVolumeUnit" class="unit-select"> 
+        <option value="liter">Liter (L)</option> 
+        <option value="milliliter">Milliliter (mL)</option> 
+        <!-- Add more volume units here if needed -->
+    </select> 
+    <span class="arrow">➡</span> 
+    <select id="toVolumeUnit" class="unit-select"> 
+        <option value="liter">Liter (L)</option> 
+        <option value="milliliter">Milliliter (mL)</option> 
+        <!-- Add more volume units here if needed -->
+    </select> 
+    <button id="volumeConvertBtn" class="convert-button">Convert</button> 
+    <div class="result"> 
+        <p id="volumeResult">Result will be displayed here</p> 
+    </div> 
+</div>
+    <div class="conversion" id="force"> 
+    <h2 class="category-title">Force</h2> 
+    <input type="number" id="forceInput" class="input" placeholder="Enter value"> 
+    <select id="fromForceUnit" class="unit-select"> 
+        <option value="newton">Newton (N)</option> 
+        <option value="dyne">Dyne (dyn)</option> 
+        <!-- Add more force units here if needed -->
+    </select> 
+    <span class="arrow">➡</span> 
+    <select id="toForceUnit" class="unit-select"> 
+        <option value="newton">Newton (N)</option> 
+        <option value="dyne">Dyne (dyn)</option> 
+        <!-- Add more force units here if needed -->
+    </select> 
+    <button id="forceConvertBtn" class="convert-button">Convert</button> 
+    <div class="result"> 
+        <p id="forceResult">Result will be displayed here</p> 
+    </div> 
+</div>
+    </div> 
     </div> 
     <script src="./unit_convertor.js"></script> 
 </body> 
