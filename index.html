@@ -26,7 +26,28 @@
             margin: 0; /* Remove any margin */
             padding: 0; /* Remove any padding */
             position: fixed;
-            margin-top: 40px;
+             top: 70px; /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
+            width: 300px; /* Adjust as needed */
+            z-index: 2; /* Ensure the subtext is on top of the white background */
+        }
+        .left-content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px; /* Adjust as needed */
+            height: 100%;
+            background-color: white;
+            padding: 20px;
+            z-index: 1; /* Ensure the white background is below the title and subtext */
+        }
+        .left-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .left-content p {
+            font-size: 14px;
+            line-height: 1.5;
         }
          .buttonl {
             display: inline-block;
@@ -87,7 +108,11 @@
 <body>
     <h1>Chemprop</h1>
     <p class="subtext">Unlock Chemical Insights Calculate with Precision</p>
-
+    
+<div class="left-content">
+        <h2>ChemProp calculations made easier</h2>
+        <p>A website that serves as a database of chemical properties and a calculator for performing various chemical calculations commonly used in chemical engineering. Professionals and students will be able to use these tools. This tool will provide quick access to essential chemical data and facilitate calculations related to thermodynamics, kinetics, and process design.</p>
+    </div>
   
 
    <a href="chem_property.html" class="button special">Chemical Properties</a> 
