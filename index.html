@@ -18,11 +18,18 @@
             z-index: 999; /* Ensure the rectangle appears on top of other elements */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
         }
+        body {
+            padding-top: 60px; /* Adjust the value to accommodate the height of the rectangle */
+            margin: 0; /* Reset default margin */
+            font-family: Arial, sans-serif; /* Optional: Set font family */
+        }
         h1 {
             color: green;
             font-size: 40px;
             margin: 0; /* Remove any margin */
             padding: 0; /* Remove any padding */
+            position: relative; /* Make the heading stack above the white rectangle */
+            z-index: 2;
         }
         .subtext {
             font-size: 14px;
