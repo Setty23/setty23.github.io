@@ -1,15 +1,14 @@
 body { 
-   background-image: url(6586755_3359732.jpg); /* Replace 'background.jpg' with the path to your image */
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url(6586755_3359732.jpg); /* Replace 'background.jpg' with the path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
-    font-family: "Arial", sans-serif; 
-    overflow: hidden; 
+    background-size: cover;
+    font-family: Arial, sans-serif; /* Example font-family */
 } 
 .main { 
     background: rgba(4, 0, 255, 0.1); 
