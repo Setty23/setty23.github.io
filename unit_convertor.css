@@ -1,8 +1,8 @@
 body { 
-    background-image: linear-gradient( 
-        #fff48c, 
-        #b9a9fd
-    ); 
+   background-image: url(6586755_3359732.jpg); /* Replace 'background.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex; 
     justify-content: center; 
     align-items: center; 
