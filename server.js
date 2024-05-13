@@ -17,7 +17,6 @@ const connection = mysql.createConnection({
   password: 'root',
   database: 'chemical_property'
 });
-
 // Connect to the database
 connection.connect((err) => {
   if (err) {
@@ -31,14 +30,26 @@ connection.connect((err) => {
 app.post('/submit', (req, res) => {
   // Extract data from the form
   const symbol = req.body.symbol;
-
-  // Query the database to fetch properties of the element
-  connection.query('SELECT * FROM chemical_properties WHERE Symbol = ?', [symbol], (err, results) => {
+  connection.query(query, [symbol], (err, results) => {
     if (err) {
       console.error('Error querying database: ' + err.stack);
       res.status(500).send('Error querying database');
       return;
     }
+
+    if (results.length === 0) {
+      // If no data is found for the given symbol, return an appropriate response
+      res.status(404).send('No data found for the specified symbol');
+      return;
+    }
+
+    // Extract the specific data you need from the results
+    const extractedData = {
+      element: results[0].Element,
+      atomicNumber: results[0].AtomicNumber,
+      atomicMass: results[0].AtomicMass,
+      // Add more properties as needed
+    };
 
     // Return the result to the client
     res.json(results);
