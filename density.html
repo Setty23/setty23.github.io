@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Density Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Density Calculator</h1>
+        <div class="input-group">
+            <label for="mass">Mass (g):</label>
+            <input type="number" id="mass" step="any">
+        </div>
+        <div class="input-group">
+            <label for="volume">Volume (cm<sup>3</sup>):</label>
+            <input type="number" id="volume" step="any">
+        </div>
+        <button onclick="calculateDensity()">Calculate Density</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
