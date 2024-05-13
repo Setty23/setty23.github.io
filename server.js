@@ -1,42 +1,52 @@
-const http = require('http');
-const url = require('url');
-const fs = require('fs');
+// Import required modules
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
 
-// Create an HTTP server
-const server = http.createServer((req, res) => {
-    // Parse request URL
-    const parsedUrl = url.parse(req.url, true);
+// Create an Express application
+const app = express();
 
-    // Handle form submissions
-    if (req.method === 'POST' && parsedUrl.pathname === '/submit-form') {
-        let body = '';
-        req.on('data', (chunk) => {
-            body += chunk.toString(); // Convert Buffer to string
-        });
-        req.on('end', () => {
-            const formData = JSON.parse(body); // Assuming form data is in JSON format
-            // Process the form data as needed
-            console.log('Received form data:', formData);
+// Configure body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-            // Respond to the client
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end('Form data received successfully!');
-        });
-    } else {
-        // Serve HTML file with the form
-        fs.readFile('index.html', (err, data) => {
-            if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                return res.end('404 Not Found');
-            }
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.write(data);
-            return res.end();
-        });
-    }
+// Create a MySQL connection
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'chemical_property'
 });
 
-// Start the server and listen on port 3000
-server.listen(3000, () => {
-    console.log('Server is running on port 3000');
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database: ' + err.stack);
+    return;
+  }
+  console.log('Connected to database');
+});
+
+// Define a route to handle form submissions
+app.post('/submit', (req, res) => {
+  // Extract data from the form
+  const symbol = req.body.symbol;
+
+  // Query the database to fetch properties of the element
+  connection.query('SELECT * FROM chemical_properties WHERE Symbol = ?', [symbol], (err, results) => {
+    if (err) {
+      console.error('Error querying database: ' + err.stack);
+      res.status(500).send('Error querying database');
+      return;
+    }
+
+    // Return the result to the client
+    res.json(results);
+  });
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
