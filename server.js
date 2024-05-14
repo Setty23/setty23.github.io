@@ -53,7 +53,7 @@ app.post('/submit', (req, res) => {
     };
 
     // Return the result to the client
-    res.json(extractedData));
+    res.json(extractedData);
   });
 });
 
