@@ -30,6 +30,7 @@ connection.connect((err) => {
 app.post('/submit', (req, res) => {
   // Extract data from the form
   const symbol = req.body.symbol;
+  const query = 'SELECT * FROM chemical_properties WHERE Symbol = ?';
   connection.query(query, [symbol], (err, results) => {
     if (err) {
       console.error('Error querying database: ' + err.stack);
@@ -52,7 +53,7 @@ app.post('/submit', (req, res) => {
     };
 
     // Return the result to the client
-    res.json(results);
+    res.json(extractedData));
   });
 });
 
