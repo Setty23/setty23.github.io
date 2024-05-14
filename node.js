@@ -2,7 +2,7 @@ const http = require('http');
 
 const options = {
   hostname: 'localhost',
-  port: 80, // Change the port number if your server is running on a different port
+  port: 8080, // Change the port number if your server is running on a different port
   path: '/',
   method: 'GET'
 };
