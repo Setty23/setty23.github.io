@@ -1,3 +1,5 @@
+ChemProp
+
 Description:
 A software tool that serves as a database of chemical properties and a calculator for performing various chemical calculations commonly used in chemical engineering. Professionals and students will be able to use these tools.  This tool will provide quick access to essential chemical data and facilitate calculations related to thermodynamics, kinetics, and process design.
 
