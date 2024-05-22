@@ -1,64 +1,41 @@
-// Import required modules
 const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const path = require('path')
-// Create an Express application
+const csv = require('csv-parser');
+const fs = require('fs');
+const path = require('path');
+
 const app = express();
 
-// Configure body parser middleware..
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Create a MySQL connection
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'chemical_property'
-});
-// Connect to the database
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to database: ' + err.stack);
-    return;
-  }
-  console.log('Connected to database');
+app.get('/', (req, res) => {
+  res.send('Welcome to the Periodic Table API!');
 });
 
-// Define a route to handle form submissions
-app.post('/submit', (req, res) => {
-  // Extract data from the form
-  const symbol = req.body.symbol;
-  const query = 'SELECT * FROM chemical_properties WHERE Symbol = ?';
-  connection.query(query, [symbol], (err, results) => {
-    if (err) {
-      console.error('Error querying database: ' + err.stack);
-      res.status(500).send('Error querying database');
-      return;
-    }
+app.get('/element/:symbol', (req, res) => {
+  let symbol = req.params.symbol;
+  let data = [];
 
-    if (results.length === 0) {
-      // If no data is found for the given symbol, return an appropriate response
-      res.status(404).send('No data found for the specified symbol');
-      return;
-    }
+  const filePath = '/var/lib/mysql-files/Periodic.csv';
 
-    // Extract the specific data you need from the results
-    const extractedData = {
-      element: results[0].Element,
-      atomicNumber: results[0].AtomicNumber,
-      atomicMass: results[0].AtomicMass,
-      // Add more properties as needed
-    };
-
-    // Return the result to the client
-    res.json(extractedData);
-  });
+  fs.createReadStream(filePath)
+    .pipe(csv())
+    .on('data', (row) => {
+      if (row.Symbol === symbol) {
+        data.push(row);
+      }
+    })
+    .on('end', () => {
+      if (data.length === 0) {
+        res.status(404).send('Element not found');
+      } else {
+        res.json(data);
+      }
+    })
+    .on('error', (err) => {
+      console.error('Error reading CSV file:', err);
+      res.status(500).send('Internal Server Error');
+    });
 });
 
-// Start the server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Periodic Table API listening on port ${PORT}`);
 });
