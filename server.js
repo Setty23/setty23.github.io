@@ -6,7 +6,7 @@ const path = require('path')
 // Create an Express application
 const app = express();
 
-// Configure body parser middleware
+// Configure body parser middleware..
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
