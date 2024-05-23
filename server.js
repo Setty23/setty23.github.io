@@ -1,3 +1,10 @@
+import express from 'express';
+import csv from 'csv-parser';
+import fs from 'fs';
+import path from 'path';
+
+const app = express();
+
 app.get('/element/:symbol', (req, res) => {
   let symbol = req.params.symbol;
   let data = {};
