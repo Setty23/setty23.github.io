@@ -55,15 +55,15 @@ h1 {
 }
 
 .paragraph {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 500px;
+    margin: 100px auto;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
+    background-color: white;
+    border-radius: 50px;
 }
 
 .paragraph p {
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .paragraph strong {
